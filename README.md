@@ -38,4 +38,4 @@ Each output field is size (MO,LAT,LON)
 
 Figure Generation
 ----------
-For the provided sample imput data, two figures are generated. These are provided in the /images/ directory
+For the provided sample imput data, two figures are generated. These are provided in the [images directory](https://github.com/mzelinka/aprp/tree/master/images).
