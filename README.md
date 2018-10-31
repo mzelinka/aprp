@@ -8,7 +8,7 @@ One should difference longer periods for more robust results -- these are just f
 Reference
 ----------
 Taylor, K. E. et al. (2007), Estimating shortwave radiative forcing and response in 
-    climate models, J. Clim., 20(11), 2530-2543, doi:10.1175/JCLI4143.1.  
+    climate models, J. Clim., 20(11), 2530-2543, [doi:10.1175/JCLI4143.1.](https://journals.ametsoc.org/doi/10.1175/JCLI4143.1)
 
 Input
 ----------  
@@ -28,9 +28,9 @@ The code makes use of the following data (all provided):
 Output
 ----------
 TOA SW flux anomalies attributable to changes in:
--surface albedo (for all-, clear-, and overcast-sky conditions)
--clouds (total change and contributions from changing cloud cover, scattering, and absorption)
--non-cloud atmosphere (e.g., from changes in water vapor, aerosols, ozone)
+1. surface albedo (for all-, clear-, and overcast-sky conditions)
+2. clouds (total change and contributions from changing cloud cover, scattering, and absorption)
+3. non-cloud atmosphere (e.g., from changes in water vapor, aerosols, ozone)
 
 Each output field is size (MO,LAT,LON)
 
