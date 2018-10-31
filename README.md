@@ -28,6 +28,7 @@ The code makes use of the following data (all provided):
 Output
 ----------
 TOA SW flux anomalies attributable to changes in:
+
 1. surface albedo (for all-, clear-, and overcast-sky conditions)
 2. clouds (total change and contributions from changing cloud cover, scattering, and absorption)
 3. non-cloud atmosphere (e.g., from changes in water vapor, aerosols, ozone)
