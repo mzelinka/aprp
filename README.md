@@ -1,4 +1,8 @@
 # aprp
+
+[![DOI](https://zenodo.org/badge/155608420.svg)](https://zenodo.org/badge/latestdoi/155608420)
+
+
 A python script and some sample data are provided that demonstrate how to use the approximate partial radiative perturbation (APRP) technique to compute TOA SW radiation anomalies due to changes in individual components of the climate system. 
 
 Sample data are from a short (2-year) period of MPI-ESM-LR using the difference between sstClimAerosol and sstClim runs.
