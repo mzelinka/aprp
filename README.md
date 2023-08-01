@@ -2,34 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7809085.svg)](https://doi.org/10.5281/zenodo.7809085)
 
+A jupyter notebook is provided that demonstrates how to use the approximate partial radiative perturbation (APRP) technique to compute TOA SW radiation anomalies due to changes in individual components of the climate system for an example CMIP6 model. This notebook reads in data from two RFMIP experiments, calls the aprp.py function to perform the APRP calculations, and plots up the results. For comparison, it also performs the calculation using the formulation of Smith et al (2020), which was shown to be erroneous in Zelinka et al (2023).
 
-A python script and some sample data are provided that demonstrate how to use the approximate partial radiative perturbation (APRP) technique to compute TOA SW radiation anomalies due to changes in individual components of the climate system. 
-
-Sample data are from a short (2-year) period of MPI-ESM-LR using the difference between sstClimAerosol and sstClim runs.
-
-One should difference longer periods for more robust results -- these are just for demonstrative purposes
-
-Reference
-----------
-Taylor, K. E. et al. (2007), Estimating shortwave radiative forcing and response in 
-    climate models, J. Clim., 20(11), 2530-2543, [doi:10.1175/JCLI4143.1.](https://journals.ametsoc.org/doi/10.1175/JCLI4143.1)
-
-Input
-----------  
-The code makes use of the following data (all provided):
-
-| Frequency | Name | Description | Unit | File Format |
-|:----------|:-----------------------------|:-------------|:------|:------------|
-| monthly mean | clt | total cloud fraction | % | nc |
-| monthly mean | rsdt | downwelling SW flux at the TOA | W/m^2 | nc |
-| monthly mean | rsut | upwelling SW flux at the TOA | W/m^2 | nc |
-| monthly mean | rsutcs | upwelling SW flux at the TOA under clear skies | W/m^2 | nc |
-| monthly mean | rsuscs | upwelling SW flux at the surface under clear skies | W/m^2 | nc |
-| monthly mean | rsdscs | downwelling SW flux at the surface under clear skies | W/m^2 | nc |
-| monthly mean | rsds | downwelling SW flux at the surface | W/m^2 | nc |
-| monthly mean | rsus | upwelling SW flux at the surface | W/m^2 | nc |
-
-Output
+APRP Output
 ----------
 TOA SW flux anomalies attributable to changes in:
 
@@ -37,9 +12,12 @@ TOA SW flux anomalies attributable to changes in:
 2. clouds (total change and contributions from changing cloud cover, scattering, and absorption)
 3. non-cloud atmosphere (e.g., from changes in water vapor, aerosols, ozone)
 
-Each output field is size (MO,LAT,LON)
 
-
-Figure Generation
+References
 ----------
-For the provided sample imput data, two figures are generated. These are provided in the [images directory](https://github.com/mzelinka/aprp/tree/master/images).
+- Taylor, K. E. et al. (2007), Estimating shortwave radiative forcing and response in 
+    climate models, J. Clim., 20(11), 2530-2543, [doi:10.1175/JCLI4143.1.](https://journals.ametsoc.org/doi/10.1175/JCLI4143.1)  
+- Zelinka, M. D., T. Andrews, P. M. Forster, and K. E. Taylor, 2014: [Quantifying Components of Aerosol-Cloud-Radiation Interactions in Climate Models](http://onlinelibrary.wiley.com/doi/10.1002/2014JD021710/abstract), _J. Geophys. Res._, 119, 7599-7615, doi:10.1002/2014JD021710.
+- Smith, C. J., et al., 2020: Effective radiative forcing and adjustments in CMIP6 models, _Atmos. Chem. Phys._, 20, 9591–9618, [doi:10.5194/acp-20-9591-2020](https://doi.org/10.5194/acp-20-9591-2020).
+- Zelinka, M. D., C. J. Smith, Y. Qin, and K. E. Taylor, 2023: Comparison of Methods to Estimate Aerosol Effective Radiative Forcings in CMIP Models, _Atmos. Chem. Phys._, in press.
+
