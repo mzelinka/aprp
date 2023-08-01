@@ -1,6 +1,6 @@
 # aprp
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7809085.svg)](https://doi.org/10.5281/zenodo.7809085)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8206763.svg)](https://doi.org/10.5281/zenodo.8206763)
 
 A jupyter notebook is provided that demonstrates how to use the approximate partial radiative perturbation (APRP) technique to compute TOA SW radiation anomalies due to changes in individual components of the climate system for an example CMIP6 model. This notebook reads in data from two RFMIP experiments, calls the aprp.py function to perform the APRP calculations, and plots up the results. For comparison, it also performs the calculation using the formulation of Smith et al (2020), which was shown to be erroneous in Zelinka et al (2023).
 
