@@ -327,6 +327,11 @@ def aprp(  # pylint: disable=too-many-arguments,too-many-locals,too-many-stateme
     dacs_dgaer_fwd = _planetary_albedo(mu_cs_base, gamma_cs_pert, alpha_cs_base) - Acs1
     dacs_dgaer_bwd = Acs2 - _planetary_albedo(mu_cs_pert, gamma_cs_base, alpha_cs_pert)
 
+    """
+    Needs to be a way for gamma_oc to be impacted independently by gamma_clr and gamma_cld, 
+    such that calling the function twice, once with ctl_gamma_clr and once with pert_gamma_clr 
+    allows for an estimate of dA_oc/dgamma_clr.  
+    """       
     # Need isolated effect of mu_cs on mu_oc holding mu_cloud fixed, and vice versa:
     new_mu_oc_pert = mu_cs_pert*mu_base # Eq. 14
     new_mu_oc_base = mu_cs_base*mu_pert # Eq. 14    

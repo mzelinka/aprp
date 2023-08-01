@@ -169,7 +169,7 @@ def APRP(CTL,PERT,flag=''):
     dA_a=dA_a_clr+dA_a_oc
     dA_cld=dA_abs_cld+dA_scat_cld+dA_amt_cld
     dA_noncld=dA_abs_noncld+dA_scat_noncld
-
+    
     ## TOA SW Anomalies due to Surface Albedo Anomalies
     sfc_alb=-dA_a*RSDT
     sfc_alb_clr=-dA_a_clr*RSDT   
@@ -198,6 +198,14 @@ def APRP(CTL,PERT,flag=''):
     noncld_scat=xr.where(RSDT<0.1,0.,noncld_scat)
     noncld_abs=xr.where(RSDT<0.1,0.,noncld_abs)
 
+    ## ATTEMPT TO RECONCILE WITH GHAN
+    meanclt = 0.5*(clt1+clt2)
+    denom = 1-meanclt
+    sfc_alb_ghan = sfc_alb_clr/denom
+    adjust = sfc_alb - sfc_alb_ghan
+    cld_ghan = cld + adjust
+    
+    
     # store in a dataset:
     TIME = sfc_alb.time
     LAT = sfc_alb.lat
@@ -214,6 +222,8 @@ def APRP(CTL,PERT,flag=''):
         'noncld':(('time','lat','lon'),noncld.data),
         'noncld_scat':(('time','lat','lon'),noncld_scat.data),
         'noncld_abs':(('time','lat','lon'),noncld_abs.data),
+        'sfc_alb_ghan':(('time','lat','lon'),sfc_alb_ghan.data), # Reconcile with Ghan
+        'cld_ghan':(('time','lat','lon'),cld_ghan.data),# Reconcile with Ghan
     },
     coords={'time': TIME,'lat': LAT,'lon': LON},
     ) 
